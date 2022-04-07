@@ -17,13 +17,9 @@ Waccount-cmd/src/main/java/com/yunussen/accountcmd/api/commands/DepositFundsComm
 Waccount-common/src/main/java/com/yunussen/accountcommon/events/FundsDepositedEvent.java,4\5\454ae162ab6a4b84db458d79339bad1dbbe1b871
 ˆ
 Xaccount-common/src/main/java/com/yunussen/accountcommon/events/FundsWithdrawnEvents.java,b\1\b19feeba0ecf48a31a75533e054790f3355b7884
-†
-Vaccount-common/src/main/java/com/yunussen/accountcommon/events/AccountClosedEvent.java,2\7\270d4317ca52775f74ee3ab58ebbf65eab80da93
 F
 account-common/pom.xml,9\b\9b956fc22f10cccc66adad607aeecec7db7cd776
 ˆ
 Xaccount-cmd/src/main/java/com/yunussen/accountcmd/api/commands/WithdrawFundsCommand.java,9\d\9d18cedccecb7fa2a905df31a0189106a0897705
 ‡
 Waccount-cmd/src/main/java/com/yunussen/accountcmd/api/commands/CloseAccountCommand.java,e\3\e3408d66ab23f37d20ccc771d7656cd36ed92227
-†
-Vaccount-cmd/src/main/java/com/yunussen/accountcmd/api/commands/OpenAccountCommand.java,1\2\12bed4c380b6331f0f63efa43d3014f1007bb86b
