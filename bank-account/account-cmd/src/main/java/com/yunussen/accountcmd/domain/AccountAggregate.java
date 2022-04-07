@@ -4,7 +4,7 @@ import com.yunussen.accountcmd.api.commands.OpenAccountCommand;
 import com.yunussen.accountcommon.events.AccountClosedEvent;
 import com.yunussen.accountcommon.events.AccountOpenedEvent;
 import com.yunussen.accountcommon.events.FundsDepositedEvent;
-import com.yunussen.accountcommon.events.FundsWithdrawnEvents;
+import com.yunussen.accountcommon.events.FundsWithdrawnEvent;
 import com.yunussen.cqrscore.domain.AggregateRoot;
 import lombok.NoArgsConstructor;
 
@@ -56,13 +56,13 @@ public class AccountAggregate extends AggregateRoot {
         if (balance <= 0 || balance < amount) {
             throw new IllegalArgumentException("the funds amount cannot be greater than balance.");
         }
-        raiseEvent(FundsWithdrawnEvents.builder()
+        raiseEvent(FundsWithdrawnEvent.builder()
                 .id(this.id)
                 .amount(amount)
                 .build());
     }
 
-    public void apply(FundsWithdrawnEvents event) {
+    public void apply(FundsWithdrawnEvent event) {
         this.id = event.getId();
         this.balance -= event.getAmount();
     }

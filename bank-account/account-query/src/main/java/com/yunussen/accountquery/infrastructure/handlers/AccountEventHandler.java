@@ -3,7 +3,7 @@ package com.yunussen.accountquery.infrastructure.handlers;
 import com.yunussen.accountcommon.events.AccountClosedEvent;
 import com.yunussen.accountcommon.events.AccountOpenedEvent;
 import com.yunussen.accountcommon.events.FundsDepositedEvent;
-import com.yunussen.accountcommon.events.FundsWithdrawnEvents;
+import com.yunussen.accountcommon.events.FundsWithdrawnEvent;
 import com.yunussen.accountquery.domain.AccountRepository;
 import com.yunussen.accountquery.domain.BankAccount;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +39,7 @@ public class AccountEventHandler implements EventHandler {
     }
 
     @Override
-    public void on(FundsWithdrawnEvents event) {
+    public void on(FundsWithdrawnEvent event) {
         var bankAccount = accountRepository.findById(event.getId());
         if (bankAccount.isEmpty()) {
             return;

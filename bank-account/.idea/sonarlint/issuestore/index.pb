@@ -13,8 +13,6 @@ C
 Waccount-cmd/src/main/java/com/yunussen/accountcmd/api/commands/DepositFundsCommand.java,4\0\403ecdd6dfaf9b19c667c3db1cb528ce29b01d20
 ‡
 Waccount-common/src/main/java/com/yunussen/accountcommon/events/FundsDepositedEvent.java,4\5\454ae162ab6a4b84db458d79339bad1dbbe1b871
-ˆ
-Xaccount-common/src/main/java/com/yunussen/accountcommon/events/FundsWithdrawnEvents.java,b\1\b19feeba0ecf48a31a75533e054790f3355b7884
 F
 account-common/pom.xml,9\b\9b956fc22f10cccc66adad607aeecec7db7cd776
 ˆ
