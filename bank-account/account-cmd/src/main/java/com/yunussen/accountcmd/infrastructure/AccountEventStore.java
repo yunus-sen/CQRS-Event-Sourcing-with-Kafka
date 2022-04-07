@@ -6,6 +6,7 @@ import com.yunussen.cqrscore.events.BaseEvent;
 import com.yunussen.cqrscore.events.EventModel;
 import com.yunussen.cqrscore.exception.AggregateNotFoundException;
 import com.yunussen.cqrscore.exception.ConcurrencyException;
+import com.yunussen.cqrscore.producer.EventProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,8 @@ import java.util.stream.Collectors;
 
 @Service
 public class AccountEventStore implements EventStore {
+    @Autowired
+    private EventProducer eventProducer;
     @Autowired
     private EventStoreRepository eventStoreRepository;
 
@@ -39,8 +42,9 @@ public class AccountEventStore implements EventStore {
                     .build();
 
             var persistedEvent = eventStoreRepository.save(eventModel);
-            if (persistedEvent != null) {
-                //TODO: produce event to kafka
+            if (!persistedEvent.getId().isBlank()) {
+                //evetn send to kafka
+                eventProducer.produce(event.getClass().getSimpleName(), event);
             }
         }
     }
@@ -51,6 +55,6 @@ public class AccountEventStore implements EventStore {
         if (eventStream == null && eventStream.isEmpty()) {
             throw new AggregateNotFoundException();
         }
-        return eventStream.stream().map(x -> x.getEventData()).collect(Collectors.toList());
+        return eventStream.stream().map(EventModel::getEventData).collect(Collectors.toList());
     }
 }

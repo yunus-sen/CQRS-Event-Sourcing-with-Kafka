@@ -45,7 +45,7 @@ public abstract class AggregateRoot {
         } catch (Exception e) {
             logger.log(Level.SEVERE, "Error applying  event to aggragate", e);
         } finally {
-            if (isNewEvent) {
+            if (isNewEvent.equals(Boolean.TRUE)) {
                 changes.add(event);
             }
         }
