@@ -20,7 +20,7 @@ spring:
     listener:
       ack-mode: MANUEL_IMMEDIATE
     consumer:
-      bootstrap-servers: http://localhost:9092
+      bootstrap-servers: localhost:9092
       group-id: bankaccConsumer
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
