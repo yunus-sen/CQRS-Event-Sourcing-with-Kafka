@@ -13,7 +13,7 @@ import java.util.Date;
 @NoArgsConstructor
 public class AccountAggregate extends AggregateRoot {
     private Boolean active;
-    private double banlance;
+    private double balance;
 
     public AccountAggregate(OpenAccountCommand command) {
         raiseEvent(AccountOpenedEvent.builder()
@@ -28,11 +28,11 @@ public class AccountAggregate extends AggregateRoot {
     public void apply(AccountOpenedEvent event) {
         this.id = event.getId();
         this.active = true;
-        this.banlance = event.getOpeningBalance();
+        this.balance = event.getOpeningBalance();
     }
 
     public void depositFunds(double amount) {
-        if (!this.active) {
+        if (this.active.equals(false)) {
             throw new IllegalArgumentException("Funds cannot be deposited into a closed account!");
         }
         if (amount <= 0) {
@@ -46,14 +46,14 @@ public class AccountAggregate extends AggregateRoot {
 
     public void apply(FundsDepositedEvent event) {
         this.id = event.getId();
-        this.banlance += event.getAmount();
+        this.balance += event.getAmount();
     }
 
     public void withdrawFunds(double amount) {
-        if (!this.active) {
+        if (this.active.equals(false)) {
             throw new IllegalArgumentException("Funds cannot be withdraw from a closed account!");
         }
-        if (banlance <= 0 || banlance < amount) {
+        if (balance <= 0 || balance < amount) {
             throw new IllegalArgumentException("the funds amount cannot be greater than balance.");
         }
         raiseEvent(FundsWithdrawnEvents.builder()
@@ -64,11 +64,11 @@ public class AccountAggregate extends AggregateRoot {
 
     public void apply(FundsWithdrawnEvents event) {
         this.id = event.getId();
-        this.banlance -= event.getAmount();
+        this.balance -= event.getAmount();
     }
 
     public void closeAccount() {
-        if (!this.active) {
+        if (this.active.equals(false)) {
             throw new IllegalArgumentException("the Account has already been  closeded.");
         }
         raiseEvent(AccountClosedEvent.builder()
@@ -79,5 +79,9 @@ public class AccountAggregate extends AggregateRoot {
     public void apply(AccountClosedEvent event) {
         this.id = event.getId();
         this.active = false;
+    }
+
+    public double getBalance() {
+        return balance;
     }
 }
