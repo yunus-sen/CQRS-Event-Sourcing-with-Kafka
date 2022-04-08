@@ -31,9 +31,6 @@ public class AccountCommandDispatcher implements CommandDispatcher {
             throw new RuntimeException("cannot send command to more than one command !");
         }
 
-        handlers.get(0).handle(command)
-
-        ;
-
+        handlers.get(0).handle(command);
     }
 }
