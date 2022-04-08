@@ -25,8 +25,6 @@ _account-query/src/main/java/com/yunussen/accountquery/infrastructure/handlers/E
 aaccount-query/src/main/java/com/yunussen/accountquery/infrastructure/consumers/EventConsumer.java,d\e\de950855a55f5ce63346d0aaf82fd8361e4c4dd6
 ‚
 Raccount-cmd/src/main/java/com/yunussen/accountcmd/api/commands/CommandHandler.java,5\b\5b0a5241961157477a17ecc25f98a9a2382389ae
-}
-Maccount-common/src/main/java/com/yunussen/accountcommon/dto/BaseResponse.java,9\5\950d45b506005bbac53e36773cc7b673adbcafa2
 ~
 Naccount-cmd/src/main/java/com/yunussen/accountcmd/dto/OpenAccountResponse.java,1\8\18527fdebe08007dff604a428cfcd4350fdd7da6
 |
