@@ -5,8 +5,6 @@ C
 account-cmd/pom.xml,c\7\c7ef0d96e4dc12949ec0ad04072a0f3a712f2c70
 á
 Waccount-cmd/src/main/java/com/yunussen/accountcmd/api/commands/DepositFundsCommand.java,4\0\403ecdd6dfaf9b19c667c3db1cb528ce29b01d20
-á
-Waccount-common/src/main/java/com/yunussen/accountcommon/events/FundsDepositedEvent.java,4\5\454ae162ab6a4b84db458d79339bad1dbbe1b871
 F
 account-common/pom.xml,9\b\9b956fc22f10cccc66adad607aeecec7db7cd776
 à
@@ -15,16 +13,10 @@ Xaccount-cmd/src/main/java/com/yunussen/accountcmd/api/commands/WithdrawFundsCom
 Waccount-cmd/src/main/java/com/yunussen/accountcmd/api/commands/CloseAccountCommand.java,e\3\e3408d66ab23f37d20ccc771d7656cd36ed92227
 á
 Waccount-query/src/test/java/com/yunussen/accountquery/AccountQueryApplicationTests.java,d\8\d876c3ac715cba546bab92aa75e446e4c3087fb1
-Ü
-Vaccount-common/src/main/java/com/yunussen/accountcommon/events/AccountClosedEvent.java,2\7\270d4317ca52775f74ee3ab58ebbf65eab80da93
-Ü
-Vaccount-common/src/main/java/com/yunussen/accountcommon/events/AccountOpenedEvent.java,3\0\308762f8eadbf0c36ab067f391f8967b79fd135d
 É
 Saccount-query/src/main/java/com/yunussen/accountquery/domain/AccountRepository.java,6\f\6f7cca31ad415f9235f73d1bb804d6630b45c7df
 E
 account-query/pom.xml,d\0\d0fb8f7072f834a598dbdb1c8b79fe6ab60eef36
-á
-Waccount-common/src/main/java/com/yunussen/accountcommon/events/FundsWithdrawnEvent.java,1\a\1abfbbc2ba10037344f45d36caf30314dba915e1
 }
 Maccount-query/src/main/java/com/yunussen/accountquery/domain/BankAccount.java,b\5\b559d440a5ccfc1c9aa20514dd5811e31f62095a
 è
