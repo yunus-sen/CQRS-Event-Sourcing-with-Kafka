@@ -1,4 +1,5 @@
 package com.yunussen.accountcmd.api.commands;
+//local2
 //local
 //yunus.sen git edit 2
 import com.yunussen.accountcmd.domain.AccountAggregate;
